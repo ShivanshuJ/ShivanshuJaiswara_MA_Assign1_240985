@@ -1,0 +1,13 @@
+class Solution {
+public:
+    void sortColors(std::vector<int>& A) {
+        int a = 0, b = 0, c = A.size() - 1;
+        while (b <= c) {
+            switch (A[b]) {
+                case 0: std::swap(A[a++], A[b++]); break;
+                case 1: b++; break;
+                default: std::swap(A[b], A[c--]);
+            }
+        }
+    }
+};
